@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Google Maps with AJAX and JSON</title>
+		<style> 
+
+			h1{
+				text-align: center;
+				color:#e6005c;
+			}
+
+			h2{
+				color:#e6005c;
+			}
+
+			#mapa { 
+				width:700px; 
+				height:400px; 
+				margin: auto;
+			} 
+
+			p{
+				text-align:center;
+			}
+
+			</style> 
+	</head>
+	<body>
+		<h1>Google Maps with AJAX and JSON</h1>
+		<div id="mapa"></div>
+
+		<footer>
+			<p>Made by: <a href="https://www.dorinamihai.com">Dorina Mihai</a> for development purposes only.</p>
+		</footer>
+			
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.gomap-1.3.3.min.js"></script> 
+		<script>
+			$(document).ready(function() { 
+				$("#mapa").goMap({
+					latitude:40.4185433,
+					longitude:-3.705176,
+					zoom:15,
+					maptype:"TERRAIN", //OR SATELLITE
+					scaleControl: true
+				}); 
+
+				$.goMap.createMarker({
+					latitude:40.4185433,
+					longitude:-3.705176,
+					title:"Puerta del Sol",
+					html:{
+						content:"<h2>Puerta del Sol Km 0</h2>",
+						popup:true
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
